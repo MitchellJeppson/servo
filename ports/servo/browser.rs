@@ -302,6 +302,9 @@ impl Browser {
                 EmbedderMsg::LoadComplete => {
                     self.loading_state = Some(LoadingState::Loaded);
                 }
+                EmbedderMsg::CloseBrowser => {
+                    self.browser_id = None;
+                }
                 EmbedderMsg::Shutdown => {
                     self.shutdown_requested = true;
                 },
